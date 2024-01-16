@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { filter, map, take } from "lodash-es";
+import { sortByDate } from "../utils/posts";
+import Categories from "../components/layout/Categories.astro";
+
+const allPosts = await getCollection("blog");
+const featuredPosts = filter(allPosts, (post: any) => post.data?.featured);
+const sorted = sortByDate(featuredPosts);
+
+const posts = take(sorted, 6);
+---
+
+<Layout>
+  <div class="blog-description">
+    "Kobilica: A Blog of Timeless Satire" humorously intertwines history and modernity, crafting
+    short, witty tales that playfully skewer the absurdities of both the past and the present.
+  </div>
+</Layout>
+
+<style>
+  .blog-description {
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid currentColor;
+  }
+</style>

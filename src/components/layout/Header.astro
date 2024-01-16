@@ -1,8 +1,7 @@
 ---
 import { SITE_TITLE } from "../../consts.js";
-import ThemeSwitcher from "../inputs/ThemeSwitcher.astro";
-import { HeaderSearch } from "../../blocks/header/HeaderSearch.tsx";
-import { MobileMenu } from "../../blocks/header/MobileMenu";
+import SearchLink from "../inputs/SearchLink.astro";
+import { Menu } from "../../blocks/header/Menu.tsx";
 ---
 
 <script>
@@ -15,14 +14,15 @@ import { MobileMenu } from "../../blocks/header/MobileMenu";
 
 <div class="center-container">
   <header class="header" id="header">
-    <div class="menus">
-      <nav class="menu">
-        <ThemeSwitcher />
-        <HeaderSearch client:only />
-      </nav>
-      <nav class="mobile-menu">
-        <MobileMenu client:only />
-      </nav>
+    <div class="header-links">
+      <div class="links">
+        <a class="link" href="/about">About</a>
+        <a class="link" href="https://puzzles.tihomir-selak.from.hr">Puzzles</a>
+      </div>
+      <div class="menus">
+        <SearchLink />
+        <Menu client:only />
+      </div>
     </div>
     <div class="logo-ctontainer">
       <a href="/" title={SITE_TITLE} class="logo">Kobilica</a>
@@ -42,14 +42,40 @@ import { MobileMenu } from "../../blocks/header/MobileMenu";
     gap: 8px;
   }
 
-  .mobile-menu {
-    display: block;
-  }
-  .menu {
-    display: none;
+  .header-links {
+    display: flex;
+    width: 100%;
+    gap: 8px;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+  }
+
+  .menus {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: none;
+    gap: 8px;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
   }
 
   .logo-ctontainer {
@@ -71,19 +97,8 @@ import { MobileMenu } from "../../blocks/header/MobileMenu";
     }
   }
   @media (min-width: 769px) {
-    .menu {
-      display: flex;
-    }
-    .mobile-menu {
-      display: none;
-    }
-
     .header {
       padding: 20px 0;
-    }
-
-    .logo {
-      width: 80px;
     }
   }
 </style>

@@ -20,6 +20,15 @@ const Post = styled("li")`
   transition: 0.2s ease;
 `;
 
+const PostImage = styled("div")`
+  margin-bottom: 10px;
+  border-radius: 12px;
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+`;
+
 const PostLink = styled("a")`
   display: block;
 
@@ -95,7 +104,7 @@ export const SearchList = ({ posts }: SearchProps) => {
         {map(filteredPosts(), (post) => (
           <Post>
             <PostLink href={`/post/${get(post, ["slug"])}`}>
-              <img src={get(post, ["data", "heroImage"])} />
+              <PostImage style={`background-image: url(${get(post, ["data", "heroImage"])});`} />
               <h4>{get(post, ["data", "title"])}</h4>
             </PostLink>
             <Info>
