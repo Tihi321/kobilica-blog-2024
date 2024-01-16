@@ -1,0 +1,51 @@
+---
+import { map, range } from "lodash-es";
+const { prevUrl, nextUrl, totalPages, currentPage, paged } = Astro.props as {
+  prevUrl: string;
+  nextUrl: string;
+  paged: string;
+  currentPage: number;
+  totalPages: number;
+};
+
+console.log(totalPages);
+---
+
+<nav class="pagination">
+  {
+    totalPages > 1 && (
+      <div>
+        <a class={`link ${!prevUrl && "disabled"}`} href={prevUrl}>
+          Previous
+        </a>
+        {map(range(totalPages), (index) => {
+          const page = index + 1;
+          const url = page === 1 ? `/${paged}` : `/${paged}/${page}`;
+          return (
+            <a class={`link ${page === currentPage && "disabled"}`} href={url}>
+              {page}
+            </a>
+          );
+        })}
+        <a class={`link ${!nextUrl && "disabled"}`} href={nextUrl}>
+          Next
+        </a>
+      </div>
+    )
+  }
+</nav>
+
+<style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .link {
+    margin: 0;
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+</style>

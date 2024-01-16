@@ -1,0 +1,89 @@
+---
+import { SITE_TITLE } from "../../consts.js";
+import ThemeSwitcher from "../inputs/ThemeSwitcher.astro";
+import { HeaderSearch } from "../../blocks/header/HeaderSearch.tsx";
+import { MobileMenu } from "../../blocks/header/MobileMenu";
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("toggle-reading-mode", (e) => {
+      document.getElementById("header")?.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<div class="center-container">
+  <header class="header" id="header">
+    <div class="menus">
+      <nav class="menu">
+        <ThemeSwitcher />
+        <HeaderSearch client:only />
+      </nav>
+      <nav class="mobile-menu">
+        <MobileMenu client:only />
+      </nav>
+    </div>
+    <div class="logo-ctontainer">
+      <a href="/" title={SITE_TITLE} class="logo">Kobilica</a>
+    </div>
+  </header>
+</div>
+
+<style>
+  .header {
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+  .menu {
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .logo-ctontainer {
+    border-top: 1px solid currentColor;
+    border-bottom: 3px solid currentColor;
+    text-align: center;
+    width: 100%;
+    font-size: 64px;
+    line-height: 1;
+    padding: 8px 0;
+  }
+
+  .logo {
+    color: var(--text-color);
+    font-weight: bolder;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+  @media (min-width: 769px) {
+    .menu {
+      display: flex;
+    }
+    .mobile-menu {
+      display: none;
+    }
+
+    .header {
+      padding: 20px 0;
+    }
+
+    .logo {
+      width: 80px;
+    }
+  }
+</style>

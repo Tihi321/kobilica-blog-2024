@@ -1,0 +1,26 @@
+<script>
+  import { getTheme, toggleTheme } from "../../utils/theme.ts";
+  document.addEventListener("DOMContentLoaded", () => {
+    const theme = getTheme();
+    const themeSwitcher = document.querySelector("#theme-switcher");
+    if (themeSwitcher) {
+      themeSwitcher.addEventListener("click", toggleTheme);
+      themeSwitcher.textContent = theme === "light" ? "Light" : "Dark";
+    }
+  });
+</script>
+
+<button type="button" id="theme-switcher"></button>
+
+<style>
+  button {
+    background: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--focus);
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+</style>
