@@ -1,28 +1,33 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import { filter, map, take } from "lodash-es";
+import { filter, map, take, head } from "lodash-es";
 import { sortByDate } from "../utils/posts";
 import Categories from "../components/layout/Categories.astro";
 
 const allPosts = await getCollection("blog");
 const featuredPosts = filter(allPosts, (post: any) => post.data?.featured);
 const sorted = sortByDate(featuredPosts);
-
-const posts = take(sorted, 6);
 ---
 
 <Layout>
   <Categories />
-  <div class="blog-description">
-    "Kobilica: A Blog of Timeless Satire" humorously intertwines history and modernity, crafting
-    short, witty tales that playfully skewer the absurdities of both the past and the present.
+  <div class="header">
+    <div class="feature-image">
+      <img src="/images/featured/elisa.png" alt="Image of the month" />
+      <div>Image of the month</div>
+    </div>
+    <div class="blog-description">
+      "Kobilica: A Blog of Timeless Satire" humorously intertwines history and modernity, crafting
+      short, witty tales that playfully skewer the absurdities of both the past and the present.
+    </div>
   </div>
+
   <div class="hero">
     <div class="content">
       <ul class="posts">
         {
-          map(posts, (post) => (
+          map(take(sorted, 5), (post) => (
             <li class="post">
               <a class="post-link" href={`/post/${post.slug}/`}>
                 <div
@@ -42,20 +47,37 @@ const posts = take(sorted, 6);
 </Layout>
 
 <style>
+  .header {
+    display: grid;
+    grid-template-columns: minmax(300px, 600px);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid currentColor;
+    padding: 8px;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .feature-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 4px;
+    img {
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
   .posts {
     display: grid;
     list-style-type: none;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 8px;
+    gap: 16px;
     margin: 0;
     padding: 0;
-  }
-  .blog-description {
-    padding: 16px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-    border-bottom: 1px solid currentColor;
   }
   .hero {
     display: flex;

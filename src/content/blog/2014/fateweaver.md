@@ -1,7 +1,7 @@
 ---
 title: "Story about Fateweaver"
 description: Fateweaver encapsulates a mythical entity from folklore, symbolizing the intricate and enigmatic control over destiny, depicted through a Gothic lens in art and storytelling.
-pubDate: Jan 02 2024
+pubDate: 01-15-2024
 heroImage: /content/images/hero/fateweaver.png
 categories:
   - History
