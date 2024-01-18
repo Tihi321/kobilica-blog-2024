@@ -14,7 +14,7 @@ Imagine a world where the moon isn't just a desolate, barren landscape, but a pa
 
 In an event that has left scientists both baffled and bemused, this state-of-the-art telescope has snapped what appears to be... cow footprints on the lunar surface! Yes, you heard that right. Amidst the moon's craters and lunar dust, there lie the unmistakable marks of bovine hooves. Picture the scene: esteemed astronomers gaping at their screens, wondering if they've accidentally switched to a dairy farm's CCTV footage. 🤣
 
-![Fateweaver](/content/images/hero/cowmoon.png)
+![Moon](/content/images/hero/cowmoon.png)
 
 ## Implications of the Discovery
 
@@ -30,7 +30,7 @@ Then, we spoke to Dr. Faux Bovinarius, a self-proclaimed 'lunar livestock expert
 
 Delving deeper into this 'moonicow' theory, Dr. Bovinarius humorously suggested that ancient lunar cows might have communicated using 'moo waves', a form of low-frequency sound capable of traveling through the moon's thin atmosphere. "Perhaps the famous 'dark side of the moon' was actually a giant, natural barn for these celestial heifers," he conjectured, barely suppressing a laugh.
 
-![Fateweaver](/content/images/assets/solar-system.png)
+![Solar system](/content/images/assets/solar-system.png)
 
 ## Conclusion
 
