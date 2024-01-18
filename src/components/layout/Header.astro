@@ -17,11 +17,15 @@ import { Menu } from "../../blocks/header/Menu.tsx";
     <div class="header-links">
       <div class="links">
         <a class="link" href="/about">About</a>
+        <a class="link" href="/gallery">Gallery</a>
         <a class="link" href="https://puzzles.tihomir-selak.from.hr">Puzzles</a>
       </div>
       <div class="menus">
         <SearchLink />
-        <Menu client:only />
+        <div class="menu-side">
+          <div class="translate-element" id="translate-element"></div>
+          <Menu client:only />
+        </div>
       </div>
     </div>
     <div class="logo-ctontainer">
@@ -58,6 +62,27 @@ import { Menu } from "../../blocks/header/Menu.tsx";
     gap: 8px;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .menu-side {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .translate-element {
+    div:first-child {
+      width: 145px;
+      height: 25px;
+      overflow: hidden;
+    }
+
+    select {
+      height: 100%;
+      margin: 0;
+    }
   }
 
   .links {

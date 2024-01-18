@@ -13,9 +13,14 @@ const sorted = sortByDate(featuredPosts);
 <Layout>
   <Categories />
   <div class="header">
-    <div class="feature-image">
-      <img src="/images/featured/elisa.png" alt="Image of the month" />
-      <div>Image of the month</div>
+    <div class="feature-images">
+      <div
+        style={{
+          "--bg-image-url": "url(/images/featured/elisa.png)",
+        }}
+        data-image-title="Image of month"
+      >
+      </div>
     </div>
     <div class="blog-description">
       "Kobilica: A Blog of Timeless Satire" humorously intertwines history and modernity, crafting
@@ -23,52 +28,106 @@ const sorted = sortByDate(featuredPosts);
     </div>
   </div>
 
-  <div class="hero">
-    <div class="content">
-      <ul class="posts">
-        {
-          map(take(sorted, 5), (post) => (
-            <li class="post">
-              <a class="post-link" href={`/post/${post.slug}/`}>
-                <div
-                  class="hero-image"
-                  style={`background-image: url(${post.data.heroImage});`}
-                  title={post.data.title}
-                />
-                <h4 class="title">{post.data.title}</h4>
-              </a>
-              <div class="description">{post.data.description}</div>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+  <div class="content">
+    <h2 class="posts-title">Featured Posts</h2>
+    <ul class="posts">
+      {
+        map(take(sorted, 5), (post) => (
+          <li class="post">
+            <a class="post-link" href={`/post/${post.slug}/`}>
+              <div
+                class="hero-image"
+                style={`background-image: url(${post.data.heroImage});`}
+                title={post.data.title}
+              />
+              <h4 class="title">{post.data.title}</h4>
+            </a>
+            <div class="description">{post.data.description}</div>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>
 
 <style>
   .header {
-    display: grid;
-    grid-template-columns: minmax(300px, 600px);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-bottom: 1px solid currentColor;
     padding: 8px;
     gap: 16px;
     font-size: 14px;
   }
-  .feature-image {
+  .feature-images {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     font-size: 12px;
-    gap: 4px;
-    img {
-      max-height: 300px;
-      object-fit: cover;
-      object-position: center;
+    gap: 34px;
+    width: 100%;
+    padding: 15px 0;
+    div {
+      position: relative;
+      background-image: var(--bg-image-url);
+      height: 220px;
+      min-width: 250px;
+      max-width: 400px;
+      flex: 1;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -7px;
+        bottom: -7px;
+        left: 0;
+        right: 0;
+        background-image: var(--bg-image-url);
+        background-position: center;
+        background-size: cover;
+        opacity: 0.5;
+        filter: blur(12px);
+      }
+
+      &::before {
+        content: attr(data-image-title);
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .posts-title {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 16px 0;
+    font-weight: bold;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid currentColor;
+    }
+
+    &::before {
+      margin-right: 0.5em;
+    }
+
+    &::after {
+      margin-left: 0.5em;
     }
   }
   .posts {
@@ -79,11 +138,11 @@ const sorted = sortByDate(featuredPosts);
     margin: 0;
     padding: 0;
   }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+
+  .blog-description {
+    max-width: 500px;
+  }
+  .content {
     padding: 16px 0;
   }
 

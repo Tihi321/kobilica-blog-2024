@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import { filter, map, take } from "lodash-es";
+import { filter, take } from "lodash-es";
 import { sortByDate } from "../utils/posts";
-import Categories from "../components/layout/Categories.astro";
 
 const allPosts = await getCollection("blog");
 const featuredPosts = filter(allPosts, (post: any) => post.data?.featured);

@@ -1,0 +1,29 @@
+---
+import { promises as fs } from "fs";
+import Layout from "../layouts/Layout.astro";
+import path from "path";
+
+const imagesDir = path.join(process.cwd(), "/public/images/featured");
+const imageFiles = await fs.readdir(imagesDir);
+const images = imageFiles.map((file) => `/images/featured/${file}`);
+---
+
+<Layout>
+  <div class="gallery">
+    {images.map((image) => <img src={image} alt="" />)}
+  </div>
+</Layout>
+
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+  }
+</style>
