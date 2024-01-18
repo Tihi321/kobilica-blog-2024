@@ -13,21 +13,16 @@ const sorted = sortByDate(featuredPosts);
 <Layout>
   <Categories />
   <div class="header">
-    <div class="feature-images">
-      <div
-        style={{
-          "--bg-image-url": "url(/images/featured/elisa.png)",
-        }}
-        data-image-title="Image of month"
-      >
-      </div>
+    <div>
+      <img src="/images/featured/elisa.png" title="Image of month" />
+      <div>Image of the month</div>
     </div>
+
     <div class="blog-description">
       "Kobilica: A Blog of Timeless Satire" humorously intertwines history and modernity, crafting
       short, witty tales that playfully skewer the absurdities of both the past and the present.
     </div>
   </div>
-
   <div class="content">
     <h2 class="posts-title">Featured Posts</h2>
     <ul class="posts">
@@ -61,50 +56,16 @@ const sorted = sortByDate(featuredPosts);
     gap: 16px;
     font-size: 14px;
   }
-  .feature-images {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 12px;
-    gap: 34px;
-    width: 100%;
-    padding: 15px 0;
-    div {
-      position: relative;
-      background-image: var(--bg-image-url);
-      height: 220px;
-      min-width: 250px;
-      max-width: 400px;
-      flex: 1;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
+  img {
+    height: 220px;
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+  }
 
-      &::after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: -7px;
-        bottom: -7px;
-        left: 0;
-        right: 0;
-        background-image: var(--bg-image-url);
-        background-position: center;
-        background-size: cover;
-        opacity: 0.5;
-        filter: blur(12px);
-      }
-
-      &::before {
-        content: attr(data-image-title);
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
+  .blog-description {
+    max-width: 500px;
+    font-size: 16px;
+    text-align: center;
   }
 
   .posts-title {
@@ -139,9 +100,6 @@ const sorted = sortByDate(featuredPosts);
     padding: 0;
   }
 
-  .blog-description {
-    max-width: 500px;
-  }
   .content {
     padding: 16px 0;
   }

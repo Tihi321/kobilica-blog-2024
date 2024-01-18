@@ -33,7 +33,7 @@ const PostLink = styled("a")`
   display: block;
 
   &:hover {
-    img {
+    div {
       box-shadow: var(--box-shadow);
     }
   }

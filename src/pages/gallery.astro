@@ -10,7 +10,13 @@ const images = imageFiles.map((file) => `/images/featured/${file}`);
 
 <Layout>
   <div class="gallery">
-    {images.map((image) => <img src={image} alt="" />)}
+    {
+      images.map((image) => (
+        <a href={image}>
+          <img src={image} alt="" />
+        </a>
+      ))
+    }
   </div>
 </Layout>
 
@@ -18,12 +24,16 @@ const images = imageFiles.map((file) => `/images/featured/${file}`);
   .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-  }
-  .gallery img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 10px;
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+
+      &:hover {
+        box-shadow: var(--box-shadow);
+      }
+    }
   }
 </style>
