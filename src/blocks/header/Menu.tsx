@@ -3,10 +3,15 @@ import { styled } from "solid-styled-components";
 import { getTheme, toggleTheme } from "../../utils/theme";
 
 const Button = styled("button")`
+  display: inline-block;
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const MobileButton = styled("button")`
@@ -29,6 +34,16 @@ const ThemeSwitch = styled("button")`
   line-height: 1.2;
   font-weight: 700;
   flex: 1;
+`;
+
+const ThemeSwitchDeskop = styled(ThemeSwitch)`
+  display: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+  }
 `;
 
 const MenuSvg = styled("svg")`
@@ -90,6 +105,7 @@ export const Menu = () => {
 
   return (
     <>
+      <ThemeSwitchDeskop onClick={toggleTheme}>{getTheme()}</ThemeSwitchDeskop>
       <Button onClick={() => setShowMenu(true)} role="button" title="open menu">
         <MenuSvg
           class="cog-icon"
