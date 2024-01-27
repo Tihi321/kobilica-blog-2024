@@ -27,7 +27,7 @@ const sorted = sortByDate(featuredPosts);
     <h2 class="posts-title">Featured Posts</h2>
     <ul class="posts">
       {
-        map(take(sorted, 5), (post) => (
+        map(take(sorted, 4), (post) => (
           <li class="post">
             <a class="post-link" href={`/post/${post.slug}/`}>
               <div
@@ -102,14 +102,5 @@ const sorted = sortByDate(featuredPosts);
 
   .content {
     padding: 16px 0;
-  }
-
-  .hero-image {
-    margin-bottom: 10px;
-    border-radius: 12px;
-    width: 100%;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
   }
 </style>

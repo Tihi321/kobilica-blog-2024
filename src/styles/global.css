@@ -4,7 +4,7 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-html {
+ html {
 	--focus: rgba(255, 255, 255, 1);
 	--primary: rgba(51, 51, 51, 1);
 	--secondary: rgba(23, 173, 232, 1);
@@ -31,15 +31,15 @@ html.dark {
 }
 
 @font-face {
-	font-family: 'Roboto Slab';
-	src: url('/fonts/RobotoSlab-Regular.woff') format('woff');
+	font-family: 'Atkinson';
+	src: url('/fonts/atkinson-regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Roboto Slab';
-	src: url('/fonts/RobotoSlab-Bold.woff') format('woff');
+	font-family: 'Atkinson';
+	src: url('/fonts/atkinson-bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -48,12 +48,12 @@ html.dark {
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Atkinson', sans-serif;
 	margin: 0;
 	padding: 0;
 	background: var(--focus);
 	color: var(--text-color);
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.3;
 	min-height: 100vh;
 	display: flex;
@@ -61,7 +61,7 @@ body {
   align-items: center;
 
 	@media (min-width: 769px) {
-		font-size: 18px;
+		font-size: 20px;
 		line-height: 1.7;
 	}
 }
@@ -102,13 +102,10 @@ h6 {
 h1 {
 	font-size: 3.052em;
 }
-h2 {
-	font-size: 2.441em;
-}
 h3 {
 	font-size: 1.953em;
 }
-h4 {
+h4, h3 {
 	font-size: 1.563em;
 }
 h5 {
@@ -177,9 +174,56 @@ hr {
 .post-link {
 	display: block;
 
+	.hero-image {
+		border: 4px solid var(--primary);
+	}
+
+
 	&:hover {
 		.hero-image {
 			box-shadow: var(--box-shadow);
 		}
+	}
+}
+
+.post {
+	width: 100%;
+	margin-bottom: 12px;
+	text-decoration: none;
+	transition: 0.2s ease;
+
+	.hero-image {
+		margin-bottom: 10px;
+		border-radius: 12px;
+		width: 100%;
+		height: 250px;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.title {
+		margin: 12px 0;
+		font-size: 22px;
+
+		@media screen and (min-width: 769px) {
+			font-size: 28px;
+		}
+	}
+
+	.info {
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		font-size: 12px;
+	}
+	.description {
+		margin: 0;
+		font-size: 18px;
+	}
+
+	.categories {
+		display: flex;
+		flex-direction: row;
+		gap: 4px;
 	}
 }
