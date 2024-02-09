@@ -1,13 +1,21 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import { filter, map, take, head } from "lodash-es";
+import { filter, map, take, includes } from "lodash-es";
 import { sortByDate } from "../utils/posts";
 import Categories from "../components/layout/Categories.astro";
 
 const allPosts = await getCollection("blog");
-const featuredPosts = filter(allPosts, (post: any) => post.data?.featured);
-const sorted = sortByDate(featuredPosts);
+const allFeaturedPosts = filter(allPosts, (post: any) => post.data?.featured);
+const sortedFeatured = sortByDate(allFeaturedPosts);
+const allSorted = sortByDate(allPosts);
+
+const featuredPosts = take(sortedFeatured, 2);
+const featuredPostNames = map(featuredPosts, (post) => post.data.title);
+
+// filter out posts that are not in featured names
+const allLatestPosts = filter(allSorted, (post) => !includes(featuredPostNames, post.data.title));
+const latestPosts = take(allLatestPosts, 4);
 ---
 
 <Layout>
@@ -27,7 +35,25 @@ const sorted = sortByDate(featuredPosts);
     <h2 class="posts-title">Featured Posts</h2>
     <ul class="posts">
       {
-        map(take(sorted, 4), (post) => (
+        map(featuredPosts, (post) => (
+          <li class="post">
+            <a class="post-link" href={`/post/${post.slug}/`}>
+              <div
+                class="hero-image"
+                style={`background-image: url(${post.data.heroImage});`}
+                title={post.data.title}
+              />
+              <h4 class="title">{post.data.title}</h4>
+            </a>
+            <div class="description">{post.data.description}</div>
+          </li>
+        ))
+      }
+    </ul>
+    <h2 class="posts-title">Latest Posts</h2>
+    <ul class="posts">
+      {
+        map(latestPosts, (post) => (
           <li class="post">
             <a class="post-link" href={`/post/${post.slug}/`}>
               <div
