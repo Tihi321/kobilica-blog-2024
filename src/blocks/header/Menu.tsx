@@ -147,6 +147,7 @@ export const Menu = () => {
             <HeaderLinks>
               <a href="/about">About</a>
               <a href="/gallery">Gallery</a>
+              <a href="https://ollama-quiz.tihomir-selak.from.hr/">Puzzles</a>
               <a href="https://puzzles.tihomir-selak.from.hr">Puzzles</a>
             </HeaderLinks>
           </MenuContent>
