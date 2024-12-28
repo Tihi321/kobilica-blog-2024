@@ -8,7 +8,7 @@ categories:
 featured: true
 ---
 
-<div style="text-align: center;">
+<div style="text-align: center;padding-bottom: 14px;">
 <audio controls>
    <source src="/content/audio/podcasts/man-who-mistook-wife-hat.mp3" type="audio/mp3">
    Your browser does not support the audio element.
