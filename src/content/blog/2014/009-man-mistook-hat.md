@@ -21,11 +21,11 @@ Dear Brother,
 
 I must tell you of the path my work has taken. It seems my neurology is leading me not just through the familiar pathways of disease and diagnosis, but into a world of the extraordinary, of the unusual and perplexing. I've always been captivated by the subtle machinery of the brain, but lately, I’ve encountered cases which seem to defy all I’ve been taught, challenging the very foundations of my understanding. This is not just about finding the precise location of a lesion or the biochemical source of a malady; it's about confronting what it truly means to be human in the face of profound change and loss. I find myself drawn to the particular, the individual experience, in a way that textbooks can't account for. It's a strange new path, and I find myself walking it with a mix of anticipation and apprehension.
 
-![Labirinth](/content/images/assets/labirinth.jpg)
-
 ## Letter 2: The Man Who Mistook His Wife for a Hat
 
 You wouldn't believe, brother, the case I recently encountered. Imagine, if you will, a man, a gifted musician, so profoundly lost in a particular kind of visual disarray that he simply doesn’t see the world as the rest of us do. I’m speaking of Dr. P., a man of great intellect, who began mistaking objects, faces, the most everyday things, for something else altogether. A water hydrant became a child’s head, a carved knob on a piece of furniture became a person, and, in the most shocking episode, he reached out to put his wife’s head on, mistaking it for his hat! He could see, brother, but he could not perceive. It was as if his brain had become a sort of machine, able to process every detail but unable to grasp what those details truly mean. It’s as if he has lost the ‘concrete’ entirely, and can only see the world as an abstract scheme. This shook me profoundly. It raised doubts in me about how we classify deficits, and whether we are truly seeing what the patient is experiencing. It made me wonder at the limitations of our science, and, more generally, to see the limitations of that “objective”, mechanistic view of the mind.
+
+![Labirinth](/content/images/assets/labirinth.jpg)
 
 ## Letter 3: The Lost Mariner
 
@@ -35,8 +35,6 @@ My heart ached this week, brother, with an entirely different sort of case, a ma
 
 Then came Christina, brother, and I must admit, I felt bewildered. She was a young woman, struck with a rare illness that made her lose the very sense of her body. She could see her hands, but she could not feel their position or their movement. To her, her body was not her own. She called herself ‘disembodied’, and it was truly shocking to observe. It was as if her limbs had become external things. Yet, through all of this, she was determined, resourceful, and with a sort of courage. She had, you see, lost all normal proprioception, that secret ‘sixth sense’ that allows us, always, to feel the position and state of our body, without having to think about it. Yet, she could substitute vision for it, could make her limbs and body her own through her eyes. What does all this mean? How important, how much a part of ourselves, are the senses that we do not even know that we have? It shows, at least, that a person can still live, still function, even when stripped of some essential part of their being. It's as if the mind can create its own world, even when the body has, in some way, been lost.
 
-![Space wen](/content/images/assets/space-web.jpg)
-
 ## Letter 5: The Spectrum of Excess
 
 It’s not always about the missing pieces, brother. I’ve begun to see the mind as a site of excess as well as deficit; a place where things can grow out of control, as surely as they can break down. Take Witty Ticcy Ray, who is tormented, and energized, by a compulsion to move, to jerk, to tic, to make noises; or, indeed, to utter ‘tics’ of speech. It is a form of being ‘possessed’, a feeling of being overwhelmed by involuntary impulses. And yet he too is a man with a sense of humour, with a mind of great inventiveness, and he can, even, transform his tics, as a jazz drummer transforms every ‘error’, every ‘misplaced’ note, into something new and wonderful. It is no longer just the machinery that interests me, but the very energy, the very life, that animates that machinery.
@@ -44,6 +42,8 @@ It’s not always about the missing pieces, brother. I’ve begun to see the min
 ## Letter 6: The Illusory Self and the Search for Harmony
 
 The cases have become more complex, brother; I see how many different ways the mind can be ‘altered’. Some of my patients, like the one I called 'Mr. Thompson’, see the world as shifting sets of identities. He is, at one moment, the grocer, at another, he is a doctor, at another a friend. Is it a joke? Or is it a desperate attempt to build a world, a coherent self, to replace what is continually collapsing? And Mrs. B., poor Mrs. B, who had a tumour in her frontal lobes. She cannot make sense of people, things, categories, any longer, and sees everything as equivalent—a father, a sister, a doctor, all interchangeable, all meaningless. It reminds me of Jimmie G., in a way, whose sense of self seems tethered only to the memory of his past, whereas Mrs B has lost the ability to even comprehend categories. And what then of the ‘possessed’ patient, compelled to act, to mimic, to imitate, everyone around her? What I saw here was the dissolution of the personality, of self, of all sense of individual identity; and yet even here, even in this wildness and confusion, a sort of power could be glimpsed—the power to become, or not become, the power to be, or not to be. All of this—loss, transformation, excess—forces me, and us, to consider what is the human condition, what is a person, what is the self?
+
+![Space wen](/content/images/assets/space-web.jpg)
 
 ## Letter 7: Transports and Transcendence
 
